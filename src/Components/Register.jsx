@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaApple, FaEye, FaFacebook, FaGoogle, FaRegEyeSlash } from "react-icons/fa";
 import Subtract from '/assets/Subtract.png'
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const Register = () => {
     const [error, setError] = useState('')
+    const navigation = useNavigate()
     const [showPassword, setShowPassword] = useState(false)
     const {signUp} = useContext(AuthContext)
     const {
@@ -21,7 +22,13 @@ const Register = () => {
             return setError('does not match password')
         }
         setError('')
-        signUp(email, password)
+        signUp(email, password).then(result => {
+          navigation('/')
+          alert('successfully signin')
+          console.log(result);
+        }).catch(err => {
+          alert('already signup')
+        })
 
 
     console.log(confirm_password);
