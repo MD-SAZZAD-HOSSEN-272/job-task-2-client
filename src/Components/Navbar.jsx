@@ -56,7 +56,7 @@ const Navbar = () => {
             {user ? (
               <>
                 <Link to='dashboard' className="hover:text-green-400">Dashboard</Link>
-                <Link onClick={signOut}>LogOut</Link>
+                <Link onClick={signOut} className="bg-green-500 px-4 py-2 rounded-full hover:bg-green-600">LogOut</Link>
               </>
             ) : (
               <>
@@ -109,10 +109,10 @@ const Navbar = () => {
             BECOME A SELLER
           </Link>
           {user ? (
-            <>
+            <div className="flex flex-col gap-3">
               <Link to='/dashboard' className="hover:text-green-400">Dashboard</Link>
-              <Link onClick={signOut}>LogOut</Link>
-            </>
+              <Link onClick={signOut} className="bg-green-500 px-4 py-2 rounded-full hover:bg-green-600 w-fit">LogOut</Link>
+            </div>
           ) : (
             <>
               <Link to="/auth" className="hover:text-green-400">

@@ -5,12 +5,12 @@ import Rectangle50 from '/assets/Rectangle50.png'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b1c0b] text-white py-10">
+    <footer className="bg-[#0b1c0b] text-white py-10 text-center lg:text-left">
         <div className="max-w-7xl mx-auto lg:flex justify-between w-full">
-            <p className="text-3xl font-semibold mb-2 w-1/2">
+            <p className="text-3xl font-semibold mb-2 lg:w-1/2">
             Reach Your Requirement Goals Right on Schedule
           </p>
-          <div className="w-1/2 pb-11">
+          <div className="lg:w-1/2 pb-11">
             <p className="text-sm text-gray-400 mb-4 ">
             Sign up, complete your profile, and start browsing projects. Submit
             proposals and communicate with clients to get hired.
@@ -23,7 +23,7 @@ export default function Footer() {
           </Link>
           </div>
         </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 border-t border-gray-700 pt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 border-t md:justify-start justify-center border-gray-700 pt-10">
         {/* Left Section */}
         
         <div>
@@ -67,7 +67,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 grid md:grid-cols-2 gap-6">
         {/* Social Media */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-center md:justify-start gap-4">
           <a href="#" className="p-2 bg-green-600 rounded-full hover:bg-green-700">
             <FaFacebook />
           </a>

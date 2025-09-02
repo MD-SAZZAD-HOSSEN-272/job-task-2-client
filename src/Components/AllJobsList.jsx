@@ -16,8 +16,8 @@ console.log(category);
   });
 
   return (
-    <div className=" ">
-      <div className="bg-[#061a08] w-full">
+    <div className="mb-10 ">
+      <div className="bg-[#0b1c0b] w-full">
         <div className="flex items-center gap-3  p-6 justify-center">
           {/* Search Box */}
           <div
@@ -52,17 +52,17 @@ console.log(category);
       </div>
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 mt-10">
-        {data?.length || 0} Jobs Found
+        {data?.length || 0} search result(s) found
       </h1>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {data?.map((job) => (
           <div
             key={job?._id}
             className="space-y-4 bg-white shadow-md hover:shadow-2xl group transition duration-300 p-6 rounded-2xl"
           >
             {/* Date */}
-            <p className="text-gray-400 text-sm">{job?.date}</p>
+            <p className="text-gray-400 text-sm">{new Date(job?.date).toLocaleDateString()}</p>
 
             {/* Title */}
             <h3 className="text-gray-800 font-semibold text-xl leading-snug">
