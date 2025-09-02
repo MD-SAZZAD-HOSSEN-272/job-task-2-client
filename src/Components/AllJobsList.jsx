@@ -5,8 +5,8 @@ import { BiChevronDown, BiSearch } from "react-icons/bi";
 
 const AllJobsList = () => {
   const axiosSecure = useAxiosSecure();
-  const [category, setCategory] = useState('web developer')
-console.log(category);
+  const [category, setCategory] = useState('')
+
   const { data } = useQuery({
     queryKey: ["jobs", category],
     queryFn: async () => {
@@ -14,6 +14,8 @@ console.log(category);
       return res.data;
     },
   });
+
+  console.log(data);
 
   return (
     <div className="mb-10 ">

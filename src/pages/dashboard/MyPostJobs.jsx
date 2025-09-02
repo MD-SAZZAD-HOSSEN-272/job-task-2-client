@@ -9,12 +9,10 @@ const MyPostJobs = () => {
   const { user, loading } = useContext(AuthContext);
   const navigate = useNavigate()
 
-  if(loading){
-    return <p>loading.......</p>
-  }
+ 
 
   const { data, refetch } = useQuery({
-    queryKey: ["jobs"],
+    queryKey: ["jobs", user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/my_jobs/?email=${user?.email}`);
       return res.data;
@@ -26,10 +24,13 @@ const MyPostJobs = () => {
         console.log(result);
         refetch()
     })
-    console.log(id);
+    // console.log(id);
   }
 
-  console.log(data);
+   if(loading){
+    return <p>loading.......</p>
+  }
+
 
   return (
     <div className="max-w-7xl mx-auto mt-10">
